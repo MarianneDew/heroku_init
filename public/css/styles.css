@@ -1,0 +1,408 @@
+/*Cuerpos de texto: 12px*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Roboto';
+    background-color: #ebebeb;
+    font-size: 12px;
+
+}
+
+p{font-size: 12px;}
+
+header{ display: block;
+}
+
+header{
+    background-color: #ebebeb;
+}
+/* ACOMODAR EL LOGO */
+
+header div.logo, header div.form{
+width: 50%;
+}
+header div.logo{
+padding: 10px;
+}
+
+div.margen-mobil{
+    background-color:#EAC926;
+}
+
+/* para que se quede centrado el logo y la barra */
+
+div.logoYbarraBusqueda{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+    box-sizing: border-box;
+   }
+
+/*el lugar para buscar (input) y el bloque de la luppita (submit)*/
+header .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+header .form .input {
+    background-color: #FFF;   
+    border: none;
+    border-radius: 5px;
+    color: #666;
+    padding: 5px;
+    max-height: 20px;
+    font-size: 11px;
+    overflow: auto;
+}
+
+header .form .submit { 
+    background-color: #FFF;
+    border: none;
+    color: #666;
+    font-weight: 50;
+    font-size: 13px;
+    width: 13%;
+    padding: 2.6px;
+    border-radius: 5px;
+}
+
+
+
+/*EL MENU DE HAMBURGUESA AZUL*/
+/* div.burger-menu{text-align: center;} */
+
+div.burger-menu i{
+    background-color: #107cf0;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px; /*LE DA TAMAÑO A LAS RAYITAS BLANCAS*/
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    margin:10px 0px 20px 0px; 
+} 
+
+div.burger-menu{
+    text-align: center;
+}
+
+/*centrar texto "compra encuotas y sin tarjeta"  */
+header div.logoYbarraBusqueda p{
+ width:100%;
+ text-align: center;
+ margin-top: 10px;
+}
+/* Arreglando colores de listado */
+header ul li{
+    list-style-type: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #000;
+}
+/*Titulares (Basado en tu última visita/Ofertas): 24px*/
+h3{
+    font-size:24px ;
+}
+
+/*Precios: 18px hay que agregar un class a cada precio*/
+.precio{
+    font-size: 18px;
+}
+
+/*Descuentos: 16px hay que agregar un class a cada descuento*/
+.descuento{
+    font-size: 16px;
+    color: #39b54a;
+}
+
+/*Descripciones: 16px hay que agregar un class a cada descripcion*/
+
+.descripcion{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+
+/*el camion y el %descuento tienen que tener fondo verde*/
+main section i{ color:#39b54a}
+
+/*problema del interlineado*/
+/* .articulo{ line-height:8px;} */
+
+/* BANNER */
+section.banner img{
+width: 100%;
+}
+
+/* configurar el MAIN */
+main{
+    width: 90%;
+    margin: auto;
+}
+main section article{
+    background-color: #fff;
+    margin: 10px 0px; 
+}
+
+main section article img{
+    width: 100%;
+}
+
+
+
+/*fondo del footer y letra*/
+footer{
+    background-color:#ebebeb;
+    font-family:'Roboto';
+}
+
+div.logoFooter i{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  color:#0044AA ;
+  font-size:40px;
+  
+}
+
+div.logoFooter{
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 8px;
+}
+
+.texto{
+    text-align: center;
+}
+
+/*caja de logo de envio, precio, % descuento y 
+descripcion tenga un borde superior de 1 píxel, línea sólida y color
+#ebebeb.  */
+
+article div.articulo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #ebebeb;
+    padding: 15px;
+
+}
+
+/* es necesario aclarar que es position relative en la caja padre 
+para trabajar con porcentajes en el precio y oferta */
+
+div.ultimaVisita,div.ofertas{
+      display: flex;
+     flex-wrap: wrap;
+}
+
+.precio{
+    width: 30%;
+}
+
+.descuento{
+    width: 70%;
+}
+
+
+/* Enmarcar en un circulo al camión y centrar*/
+main section article i{
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #fff;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+/* IMPORTANTE: ACLARAR position:ABSOLUTE del logo */
+
+ i.fas.fa-truck{
+     display: block;
+     justify-content: center;
+     align-items: center;
+     position:absolute;
+     top:-15px;
+     right: 25px;
+     transition: all 600ms;
+ }
+
+ main section article div i.fas.fa-truck:hover{
+     transform: rotateZ(-90deg);
+ }
+
+
+
+/* DETTALLE importante para la transicion del mediaqueries mobile=>Tablet */
+
+/* Version MOBILE */
+
+/*la transicion de clickear y que aparezca la descripcion NO me funciono 
+
+main section article .descripcion{
+    opacity: 0%;
+    transition: all 0.600ms;
+}
+main section article:hover > .main-article > .descripcion{
+    opacity: 100%;
+    
+} */
+.descripcion{
+    display: none;/* (en la parte mobile no aparece la descripcion del producto) */
+    margin-top: 20px;
+    
+} 
+
+nav {
+    display: none;
+}
+
+.burger-menu{
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.boton{
+    background-color: #1259c3;
+    border: 1px solid #1259c3;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    padding: 8px;
+    margin: 3px;
+    cursor: pointer;
+}
+/* MEDIA QUERIES */
+
+/* Navegacion Tablet */
+
+@media (min-width: 361px){
+    main section article .descripcion{
+       display: block; 
+    }
+
+    nav {
+        display: block;
+    }
+
+    main section article{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    
+    .burger-menu{
+        display: none;
+    }
+   
+    main section div.productos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    main section div.productos article{
+        width: 45%;
+    }
+
+    .precio{
+        width: 50%;
+        font-size: 16px;
+        text-align: start;
+    }
+
+    .descuento{
+        width:50%;
+        text-align: end;
+    }
+
+    div.logoYbarraBusqueda{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+    }
+
+    header div.logoYbarraBusqueda p {
+        width: 50%;
+    }
+
+    nav.navbar-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+    }
+    
+    ul.navbar-left,ul.navbar-rigth{
+        display: flex;
+    }
+
+    nav.navbar-header ul li {
+        font-size: 8.5px;
+        padding: 2px 3px 0;
+}
+
+/* Navegacion Desktop */
+
+@media (min-width: 769px){
+    main section div.productos article{
+        width: 24%;
+
+    }
+
+}
+
+/* Formularios */
+form {
+    padding: 15px;
+    margin: 30px auto;
+}
+
+form {
+    display: block;
+}
+
+#formError, #formError2 {
+    font-size: 12px;
+    display: block;
+    color: red;
+}
+form div.campo {
+    margin-bottom: 15px;
+}
+form div input.input {
+    width: 80%;
+    padding: 5px;
+    background: #fff;
+    border: 2px solid #666;
+    border-radius: 50px
+}
+
+button, input {
+    overflow: visible;
+}
+
